@@ -1,4 +1,4 @@
-//3. ¿©·¯ »ç¿ëÀÚ Á¢¼Ó°¡´ÉÇÏ°Ô. ÀÔ·ÂÇÏ¸é ÀÚ±âÂÊ¿¡¸¸ »Ñ¸®±â
+//3. ì—¬ëŸ¬ ì‚¬ìš©ì ì ‘ì†ê°€ëŠ¥í•˜ê²Œ. ì…ë ¥í•˜ë©´ ìê¸°ìª½ì—ë§Œ ë¿Œë¦¬ê¸°
 import java.net.*;
 import java.io.*;
 
@@ -9,8 +9,8 @@ public class Server{
 	public void go(){
 		try{
 			ss = new ServerSocket(5438);
-			System.out.println("Á¢¼ÓÁØºñÁß........");
-			System.out.println("¼­¹ö °¡µ¿");
+			System.out.println("ì ‘ì†ì¤€ë¹„ì¤‘........");
+			System.out.println("ì„œë²„ ê°€ë™");
 			while ( true ){
 				s = ss.accept();
 				st = new ServerThread(s);
@@ -39,7 +39,7 @@ class ServerThread extends Thread{
 		this.s = s;
 		br = new BufferedReader(new InputStreamReader(s.getInputStream()));
 		pw = new PrintWriter(new OutputStreamWriter(s.getOutputStream()),true);
-		System.out.println(s.getInetAddress()+"(ÀÌ)°¡ Á¢¼ÓÇß½À´Ï´Ù");
+		System.out.println(s.getInetAddress()+"(ì´)ê°€ ì ‘ì†í–ˆìŠµë‹ˆë‹¤");
 	}
 	public void sendMessage(String str){
 		pw.println(str);
@@ -50,7 +50,7 @@ class ServerThread extends Thread{
 				sendMessage(str);
 			}
 		}catch (IOException e){
-			System.out.println(s.getInetAddress()+"ÀÇ ¿¬°áÀÌ Á¾·áµÇ¾ú½À´Ï´Ù.");
+			System.out.println(s.getInetAddress()+"ì˜ ì—°ê²°ì´ ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 			try{
 				s.close();
 			}catch (IOException ie){	}
