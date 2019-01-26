@@ -1,4 +1,4 @@
-//2. ÀÔ·ÂÇÏ¸é ´Ù½Ã Client·Î º¸³»¼­ »Ñ¸®±â
+//2. ìž…ë ¥í•˜ë©´ ë‹¤ì‹œ Clientë¡œ ë³´ë‚´ì„œ ë¿Œë¦¬ê¸°
 import java.net.*;
 import java.io.*;
 
@@ -30,3 +30,4 @@ public class Client {
 		c.go();
 	}
 }
+
