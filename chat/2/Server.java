@@ -1,4 +1,4 @@
-//2. ÀÔ·ÂÇÏ¸é ´Ù½Ã Client·Î º¸³»¼­ »Ñ¸®±â
+//2. ì…ë ¥í•˜ë©´ ë‹¤ì‹œ Clientë¡œ ë³´ë‚´ì„œ ë¿Œë¦¬ê¸°
 import java.net.*;
 import java.io.*;
 
@@ -11,19 +11,19 @@ public class Server{
 	public void go(){
 		try{
 			ss = new ServerSocket(5435);
-			System.out.println("Á¢¼ÓÁØºñÁß........");
-			System.out.println("¼­¹ö°¡µ¿");
+			System.out.println("ì ‘ì†ì¤€ë¹„ì¤‘........");
+			System.out.println("ì„œë²„ê°€ë™");
 			s = ss.accept();
-			System.out.println(s.getInetAddress()+"ÀÌ(°¡) Á¢¼ÓÇß½À´Ï´Ù");
+			System.out.println(s.getInetAddress()+"ì´(ê°€) ì ‘ì†í–ˆìŠµë‹ˆë‹¤");
 			br = new BufferedReader(new InputStreamReader(s.getInputStream()));
 			pw = new PrintWriter(new OutputStreamWriter(s.getOutputStream()),true);
 			while ( (str = br.readLine()) != null ){
-				pw.println("³ª ¼­¹ö"+str);
+				pw.println("ë‚˜ ì„œë²„"+str);
 			}
 			s.close();
 			ss.close();
 		}catch (IOException e){
-			System.out.println("¿¬°áÀÌ Á¾·áµÇ¾ú½À´Ï´Ù.");
+			System.out.println("ì—°ê²°ì´ ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
 	}
 	public static void main(String [] args) throws IOException{
@@ -31,3 +31,4 @@ public class Server{
 		server.go();
 	}
 }
+
