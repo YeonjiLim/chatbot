@@ -1,4 +1,4 @@
-//4. text±â¹İ Ã¤ÆÃ. ¿©·¯ »ç¿ëÀÚ Á¢¼Ó, »ç¿ë °¡´É
+//4. textê¸°ë°˜ ì±„íŒ…. ì—¬ëŸ¬ ì‚¬ìš©ì ì ‘ì†, ì‚¬ìš© ê°€ëŠ¥
 import java.net.*;
 import java.io.*;
 import java.util.Vector;
@@ -25,8 +25,8 @@ public class Server{
 	public void go(){
 		try{
 			ss = new ServerSocket(5432);
-			System.out.println("Á¢¼ÓÁØºñÁß........");
-			System.out.println("¼­¹ö °¡µ¿");
+			System.out.println("ì ‘ì†ì¤€ë¹„ì¤‘........");
+			System.out.println("ì„œë²„ ê°€ë™");
 			while ( true ){
 				s = ss.accept();
 				ServerThread st = new ServerThread(this, s);
@@ -55,7 +55,7 @@ class ServerThread extends Thread{
 		this.s = s;
 		br = new BufferedReader(new InputStreamReader(s.getInputStream()));
 		pw = new PrintWriter(new OutputStreamWriter(s.getOutputStream()),true);
-		System.out.println(s.getInetAddress()+"(ÀÌ)°¡ Á¢¼ÓÇß½À´Ï´Ù");
+		System.out.println(s.getInetAddress()+"(ì´)ê°€ ì ‘ì†í–ˆìŠµë‹ˆë‹¤");
 	}
 	public void sendMessage(String string){
 		pw.println(string);
@@ -66,7 +66,7 @@ class ServerThread extends Thread{
 				server.broadcast(str);
 			}
 		}catch (IOException e){
-			System.out.println(s.getInetAddress()+"ÀÇ ¿¬°áÀÌ Á¾·áµÇ¾ú½À´Ï´Ù.");
+			System.out.println(s.getInetAddress()+"ì˜ ì—°ê²°ì´ ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 			server.removeThread(this);
 			try{
 				s.close();
